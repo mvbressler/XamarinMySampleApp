@@ -48,7 +48,7 @@ namespace MySampleApp.ViewModels
                 }
                 
                 Items.Add(new ListItem
-                    {Title = "TabbedPage", Description = "TabbedPage based on Childs", ViewName = "InlineTabbedOage"});
+                    {Title = "TabbedPage", Description = "TabbedPage based on Childs", ViewName = "InlineTabbedPage"});
                 
                 NotifyPropertyChanged(nameof(Items));
                

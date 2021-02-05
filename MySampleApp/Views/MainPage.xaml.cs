@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySampleApp.ViewModels;
+using Syncfusion.XForms.Buttons;
 using Xamarin.Forms;
 
 namespace MySampleApp
@@ -18,7 +19,7 @@ namespace MySampleApp
             _viewModel = new MainPageViewModel();
             this.BindingContext = _viewModel;
             this.Appearing += OnAppearing;
-            NavigationPage.SetHasNavigationBar(this,false);
+            // NavigationPage.SetHasNavigationBar(this,false);
             LoadData();
             
         }
@@ -43,9 +44,10 @@ namespace MySampleApp
 
         private async void ShowButton_OnClicked(object sender, EventArgs e)
         {
-            // var b = (Button) sender;
-            // var item = (ListItem) b.CommandParameter;
-            await DisplayAlert("Clicked",  "Button was cliked", "OK");
+            var type = (string) ((SfButton) sender).CommandParameter;
+            var pageType = Type.GetType("MySampleApp." + type + ",MySampleApp");
+            var page = (Page) Activator.CreateInstance(pageType);
+            await Navigation.PushAsync(page, true);
         }
     }
 }

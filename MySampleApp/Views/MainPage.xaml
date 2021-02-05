@@ -4,23 +4,13 @@
               xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
               xmlns:mySampleApp="clr-namespace:MySampleApp;assembly=MySampleApp"
               xmlns:viewModels="clr-namespace:MySampleApp.ViewModels;assembly=MySampleApp"
-              x:Class="MySampleApp.MainPage">
+              x:Class="MySampleApp.MainPage"
+              Title="My examples">
     <ContentPage.BindingContext>
         <viewModels:MainPageViewModel></viewModels:MainPageViewModel>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label 
-                FontSize="25"
-                TextColor="White"
-                BackgroundColor="Teal" 
-                Text="List of Views" 
-                HorizontalOptions="FillAndExpand" 
-                HeightRequest="80"
-                HorizontalTextAlignment="Center"
-                VerticalTextAlignment="Center"
-                />
-            <ListView
+        <ListView
                 Margin="10"
                 x:Name="SampleList" 
                 RowHeight="60" 
@@ -31,13 +21,13 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" WidthRequest="300">
+                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" WidthRequest="310">
                                 <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical">
                                     <Label HorizontalOptions="Start" FontSize="Small" FontAttributes="Bold" TextColor="CadetBlue" Text="{Binding Title}" />
                                     <Label HorizontalOptions="Start" FontSize="Micro" FontAttributes="Bold" TextColor="CadetBlue" Text="{Binding Description}"/>
                                 </StackLayout>
                                 <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal" WidthRequest="200">
-                                    <buttons:SfButton FontSize="Small" x:Name="ShowButton" Text="Show" BackgroundColor="Teal" HorizontalOptions="EndAndExpand" Clicked="ShowButton_OnClicked" CommandParameter="{Binding .}" />
+                                    <buttons:SfButton FontSize="Small" x:Name="ShowButton" Text="Show" BackgroundColor="Teal" HorizontalOptions="EndAndExpand" Clicked="ShowButton_OnClicked" CommandParameter="{Binding ViewName}" />
                                 </StackLayout>
                             
                             </StackLayout>
@@ -45,7 +35,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+
         
             
     </ContentPage.Content>
