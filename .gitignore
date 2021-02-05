@@ -1,9 +1,9 @@
-﻿/.idea/.idea.MySampleApp/.idea/
-/MySampleApp.iOS/bin/iPhoneSimulator/Debug/
+﻿/.idea/
+/MySampleApp.iOS/bin/
 /MySampleApp.iOS/obj/
-/MySampleApp.UWP/bin/x86/Debug/
+/MySampleApp.UWP/bin/
 /MySampleApp.UWP/obj/
-/MySampleApp/bin/Debug/netstandard2.0/
+/MySampleApp/bin/
 /MySampleApp/obj/
-/MySampleApp.Android/bin/Debug/
+/MySampleApp.Android/bin/
 /MySampleApp.Android/obj/
